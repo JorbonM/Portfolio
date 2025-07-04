@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+=======
+@import "tailwindcss";
+
+>>>>>>> react-spring-test
 #root {
   margin: 0 auto;
 }
 
+<<<<<<< HEAD
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -37,3 +43,14 @@
 .read-the-docs {
   color: #888;
 }
+=======
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+>>>>>>> react-spring-test
