@@ -31,16 +31,12 @@ const Background = () => {
     () => ({
       background: {
         color: {
-          value: "#0d47a1",
+          value: "#415a77",
         },
       },
       fpsLimit: 50,
       interactivity: {
         events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
           onHover: {
             enable: true,
             mode: "repulse",
@@ -58,10 +54,10 @@ const Background = () => {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: "#e0e1dd",
         },
         links: {
-          color: "#ffffff",
+          color: "#c6c7c3",
           distance: 150,
           enable: true,
           opacity: 0.5,
