@@ -1,5 +1,5 @@
 import SplitText from "../../blocks/TextAnimations/SplitText/SplitText"
-
+import Background from "./background"
 function FrontPage()
 {
     return <div className="w-full">
@@ -21,7 +21,7 @@ function FrontPage()
         </div>
     </div> */}
 
-
+      <Background/>
     <div className="grid grid-cols-5 grid-rows-4 gap-4">
         <div className="col-span-5"></div>
         <div className="col-span-5 row-start-2">
