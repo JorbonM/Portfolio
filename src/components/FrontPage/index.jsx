@@ -5,26 +5,7 @@ import "./index.css"
 function FrontPage()
 {
     return <div className="w-full">
-    {/* <div className="grid grid-cols-6 grid-rows-7 gap-4">
-        <div className="col-span-2 col-start-2 row-start-2 justify-center">
-            <h1 className="text-center text-8xl font-extrabold">Jordan Math</h1>
-            <h2 className="text-center text-4xl">Welcome to my website!</h2>  
-        </div>
-        <div className="col-span-2 col-start-2 row-start-3">
-        </div>
-        <div className="col-span-1 row-span-1 col-start-4 row-start-2">
-          <img src={personalpfp} />
-        </div>
-        <div className="col-span-2 col-start-3 row-start-5">
-          <p className='text-center'>Scroll down for more information about me!</p>
-        </div>
-        <div className="col-span-2 col-start-3 row-start-6">
-          5
-        </div>
-    </div> */}
-    <div>
       <Background />
-      </div>
     <div className="grid grid-cols-5 grid-rows-4 gap-4 z-500">
         <div className="col-span-5 row-start-2">
           <div className="text-center relative">
@@ -58,11 +39,9 @@ function FrontPage()
                         repeat={Infinity}
                       />
         </div>
-
-        {/* <h1 className="text-center text-8xl font-extrabold">Jordan Math</h1> */}
         </div>
         <div className="col-span-5 row-start-5 relative font-semibold text-[#f0eded]">
-                  <h2 className='text-center'>Scroll down for more information about me!</h2>
+                  <h2 className='text-center text-2xl'>Scroll down for more information about me!</h2>
         </div>
     </div> 
 
