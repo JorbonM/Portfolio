@@ -5,10 +5,10 @@ import "./index.css"
 function FrontPage()
 {
     return <div className="w-full">
-      <Background />
-    <div className="grid grid-cols-5 grid-rows-4 gap-4 z-500">
+      <Background className='absolute'/>
+    <div className="grid grid-cols-5 grid-rows-4 gap-4 z-500 relative">
         <div className="col-span-5 row-start-2">
-          <div className="text-center relative">
+          <div className="text-center">
               <SplitText
                   text="Jordan Math"
                   className="text-8xl font-extrabold text-[#f0eded]"
@@ -23,7 +23,7 @@ function FrontPage()
                   />
             </div>
         </div>
-        <div className="col-span-5 row-start-3 relative">
+        <div className="col-span-5 row-start-3">
           <div className="text-center">
         <TypeAnimation className="text-center font-bold text-[#f0eded] text-4xl"
                         sequence={[
@@ -40,7 +40,7 @@ function FrontPage()
                       />
         </div>
         </div>
-        <div className="col-span-5 row-start-5 relative font-semibold text-[#f0eded]">
+        <div className="col-span-5 row-start-5 font-semibold text-[#f0eded]">
                   <h2 className='text-center text-2xl'>Scroll down for more information about me!</h2>
         </div>
     </div> 
