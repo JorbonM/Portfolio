@@ -4,6 +4,8 @@ import TopBar from './components/navbar/Nav'
 import { Parallax, ParallaxLayer} from '@react-spring/parallax'
 import FrontPage from './components/FrontPage'
 import IntroPage from './components/IntroPage'
+import InitialProjectPage from './components/InitialProjectPage'
+import ContactPage from './components/ContactPage' 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,18 +37,10 @@ function App() {
           <IntroPage/>
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1}>
-          <div className="w-full">
-            <div className="flex items-center justify-center">
-              <h1 className="text-center text-xl">Jordan Math</h1>
-            </div>
-          </div>
+          <InitialProjectPage/>
         </ParallaxLayer>
         <ParallaxLayer offset={3} speed={1}>
-          <div className="w-full">
-            <div className="flex items-center justify-center">
-              <h1 className="text-center text-xl">Jordan Math</h1>
-            </div>
-          </div>
+          <ContactPage/>
         </ParallaxLayer>
       </Parallax>
     </div>

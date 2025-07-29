@@ -69,7 +69,8 @@ const IntroPage = () =>
     
     <div className="w-full">
 
-        <InView onChange={(inView, entry) => {if (inView){console.log(inView);setAnimState(true)}}}>
+        {/* <InView onChange={(inView, entry) => {if (inView){setAnimState(true)}else{setAnimState(false)}}}> */}
+        <InView onChange={(inView, entry) => {setAnimState(inView)}}>
             <div className='bg-[#587ba3] mx-16 my-8 absolute inset-0 opacity-50 backdrop-blur-sm rounded-lg'/>
             <RenderAnim animState={animState}/>
         </InView>
