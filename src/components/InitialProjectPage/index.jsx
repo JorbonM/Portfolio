@@ -19,7 +19,7 @@ const InitialProjectPage = () =>
           <DecryptedText text="Click on any Project to See a Demo"
             animateOn="view"
             revealDirection="center"
-            speed={100}/>
+            speed={75}/>
         </div>
       </div>
     </div>
