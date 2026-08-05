@@ -19,27 +19,48 @@ export default function ContactForm() {
   }
 
 return (
-    <div className="flex items-center justify-center">
-       
-  <h1 className="text-center font-bold text-[#f0eded] text-6xl">About Me</h1>
-  <br/>
-  <form onSubmit={handleSubmit(onSubmit)} >
-     {/* // other form fields */}
-    <input type="text" id='name' name="name" placeholder="Name" required/>
-    <br/>
-      <input type="email" id='email 'name="email" required placeholder="Email"/>
-      <br/>
-      <textarea name="message" id='message' required placeholder="Write message here :)"></textarea>
-      <br/>
-      <button id='submit' type="submit">Submit Form</button>
-      <br/>
-      <br/>
-      <HCaptcha
-         sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-         reCaptchaCompat={false}
-         onVerify={onHCaptchaChange} 
-         /> 
+<>
+  <div className="mx-16 my-8 rounded-lg bg-[#587ba3]/50 py-12 backdrop-blur-sm">
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="mb-6 text-center text-6xl font-bold text-[#f0eded]">
+        Contact
+      </h1>
 
-  </form>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col"
+      >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write message here :)"
+          required
+        />
+        <button id="submit" type="submit">
+          Submit Form
+        </button>
+        <br/><br/>
+        <HCaptcha
+          reCaptchaCompat={false}
+          onVerify={onHCaptchaChange}
+          sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+        />
+      </form>
+    </div>
   </div>
+</>
 )}
