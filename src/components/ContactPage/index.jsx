@@ -18,7 +18,7 @@ export default function ContactForm() {
      'Content-Type': 'application/json',
         Accept: "application/json"
       },
-      body: data
+      body: JSON.stringify(data)
     }).then((res) => res.json());
   }
 
