@@ -30,7 +30,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex-col">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
       <input
         type="hidden"
         value="f62f1850-3440-43a2-bbbd-0d24bf74322f"
@@ -63,7 +63,7 @@ export default function ContactForm() {
         onVerify={onHCaptchaChange}
       />
 
-      <button type="submit">
+      <button type="submit" id="submit" >
         Submit Form
       </button>
     </form>
