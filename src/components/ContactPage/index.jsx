@@ -20,7 +20,7 @@ const onSubmit = async (data) => {
     },
     body: JSON.stringify({
       ...data,
-      access_key: "YOUR_ACCESS_KEY",
+      access_key: "f62f1850-3440-43a2-bbbd-0d24bf74322f",
     }),
   });
 
@@ -41,7 +41,6 @@ return (
         className="flex flex-col"
         method='POST'
       >
-        <input type="hidden" name="access_key" value="f62f1850-3440-43a2-bbbd-0d24bf74322f"/>
         <input
           type="text"
           id="name"
