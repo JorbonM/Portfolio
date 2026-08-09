@@ -3,25 +3,31 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 import './index.scss'
 
 export default function ContactForm() {
-  const { register, handleSubmit, setValue } = useForm();
-  
-  const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token);
-  };
-  
-  const onSubmit = async (data) => {
-    console.log(data);
-    
-    await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-     'Content-Type': 'application/json',
-        Accept: "application/json"
-      },
-      body: data
-    }).then((res) => res.json());
-  }
+const { register, handleSubmit, setValue } = useForm();
 
+const onHCaptchaChange = (token) => {
+  setValue("h-captcha-response", token);
+};
+
+const onSubmit = async (data) => {
+  console.log(data);
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      ...data,
+      access_key: "YOUR_ACCESS_KEY",
+    }),
+  });
+
+  const result = await response.json();
+
+  console.log(result);
+};
 return (
 <>
   <div className="mx-16 my-8 rounded-lg bg-[#587ba3]/50 py-12 backdrop-blur-sm">
