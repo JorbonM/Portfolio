@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import './index.scss'
 
-export default function ContactForm() {
+export default function ContactPage() {
   const { register, handleSubmit, setValue } = useForm();
   
   const onHCaptchaChange = (token) => {
