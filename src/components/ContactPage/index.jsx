@@ -14,6 +14,9 @@ export default function ContactForm() {
     
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
+      headers: {
+     'Content-Type': 'application/json',
+      },
       body: data
     }).then((res) => res.json());
   }
