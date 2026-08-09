@@ -1,4 +1,3 @@
-```jsx
 import { useForm } from "react-hook-form";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import "./index.scss";
@@ -13,13 +12,25 @@ export default function ContactForm() {
   const onSubmit = async (data) => {
     console.log(data);
 
+
+  const formData = new FormData();
+
+    formData.append("access_key", "INSERT_KEY_HERE");
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("message", data.message);
+    formData.append(
+      "h-captcha-response",
+      data["h-captcha-response"]
+    );
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(data),
+    body: formData,
     });
 
     const result = await response.json();
@@ -75,4 +86,3 @@ export default function ContactForm() {
     </>
   );
 }
-```
