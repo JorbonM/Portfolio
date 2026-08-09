@@ -3,31 +3,25 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 import './index.scss'
 
 export default function ContactForm() {
-const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit, setValue } = useForm();
+  
+  const onHCaptchaChange = (token) => {
+    setValue("h-captcha-response", token);
+  };
+  
+  const onSubmit = async (data) => {
+    console.log(data);
+    
+    await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+     'Content-Type': 'application/json',
+        Accept: "application/json"
+      },
+      body: data
+    }).then((res) => res.json());
+  }
 
-const onHCaptchaChange = (token) => {
-  setValue("h-captcha-response", token);
-};
-
-const onSubmit = async (data) => {
-  console.log(data);
-
-  const formData = new FormData(data.target);
-  formData.append("access_key", "f62f1850-3440-43a2-bbbd-0d24bf74322f");
-
-  const response = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: formData
-  });
-
-  const result = await response.json();
-
-  console.log(result);
-};
 return (
 <>
   <div className="mx-16 my-8 rounded-lg bg-[#587ba3]/50 py-12 backdrop-blur-sm">
@@ -41,6 +35,7 @@ return (
         className="flex flex-col"
         method='POST'
       >
+        <input type="hidden" name="access_key" value="f62f1850-3440-43a2-bbbd-0d24bf74322f"/>
         <input
           type="text"
           id="name"
