@@ -12,16 +12,16 @@ const onHCaptchaChange = (token) => {
 const onSubmit = async (data) => {
   console.log(data);
 
+  const formData = new FormData(data.target);
+  formData.append("access_key", "f62f1850-3440-43a2-bbbd-0d24bf74322f");
+
   const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify({
-      ...data,
-      access_key: "f62f1850-3440-43a2-bbbd-0d24bf74322f",
-    }),
+    body: formData
   });
 
   const result = await response.json();
